@@ -13,6 +13,7 @@ import com.example.android.composition.domain.entity.Level
 
 class GameFragment : Fragment() {
 
+    private lateinit var viewModel: GameViewModel
     private lateinit var level: Level
 
     private var _binding: FragmentGameBinding? = null
@@ -22,6 +23,7 @@ class GameFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         parseArgs()
+        viewModel = GameViewModel()
     }
 
     override fun onCreateView(
@@ -46,6 +48,7 @@ class GameFragment : Fragment() {
                 )
             )
         }
+        viewModel.
     }
 
     private fun launchGameFinishedFragment(gameResult: GameResult) {
