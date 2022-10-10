@@ -1,5 +1,6 @@
 package com.example.android.composition.data
 
+import android.util.Log
 import com.example.android.composition.domain.entity.GameSettings
 import com.example.android.composition.domain.entity.Level
 import com.example.android.composition.domain.entity.Question
@@ -17,8 +18,8 @@ object GameRepositoryImpl : GameRepository {
         val options = HashSet<Int>()
         val rightAnswer = sum - visibleNumber
         options.add(rightAnswer)
-        val from = maxSumValue - sum
-        val to = maxSumValue + sum
+        val from = maxSumValue - (sum - 1)
+        val to = maxSumValue + sum + 6
         while (options.size < countOfOptions) {
             options.add(Random.nextInt(from, to))
         }
