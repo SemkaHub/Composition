@@ -18,8 +18,8 @@ object GameRepositoryImpl : GameRepository {
         val options = HashSet<Int>()
         val rightAnswer = sum - visibleNumber
         options.add(rightAnswer)
-        val from = maxSumValue - (sum - 1)
-        val to = maxSumValue + sum + 6
+        val from = rightAnswer - (rightAnswer / 2)
+        val to = rightAnswer + 10
         while (options.size < countOfOptions) {
             options.add(Random.nextInt(from, to))
         }
